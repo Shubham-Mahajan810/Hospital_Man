@@ -1,0 +1,46 @@
+<html>
+    <head> 
+        <script>
+            function f1(){
+                let ele=document.getElementById("i1")
+                let b=ele.value
+                document.getElementById("p1").innerText=b.toUpperCase()
+            }
+            function f2(){
+                let ele=document.getElementById("i1")
+                let a=ele.value
+                document.getElementById("p1").innerText=a.toLowerCase()
+            }
+            function f3(){
+
+                let ele=document.getElementById("i1").value
+                document.getElementById("p1").innerText=ele.substring(0,1).toUpperCase().concat(ele.substring(1).toLowerCase())
+            }
+            function f4(){
+                let ele=document.getElementById("i1").value
+               ele=ele.split(' ')
+                for(let i=0;i<ele.length;i++){
+
+
+                    ele[i]=((ele[i].substring(0,1).toUpperCase()+ele[i].substring(1).toLowerCase()))
+                    // if(ele==" "){ 
+                    //     document.getElementById("p1").innerText=ele.substring(0,1).toUpperCase().concat(ele.substring(1).toLowerCase())
+                    // }
+                    // document.getElementById("p1").innerText=ele.substring(0,1).toUpperCase().concat(ele.substring(1).toLowerCase())
+                }
+                ele=ele.join(' ')
+                document.getElementById("p1").innerHTML=`<b>${ele}</b>`
+            }
+        </script>
+    
+    </head>
+    <body>
+        <input type="text" id="i1">
+        <div id="d1"></div>
+        <button onClick="f1()">UpperCase</button>
+        <button onClick="f2()">LowerCase</button>
+        <button onClick="f3()">TitleCase</button>
+        <button onClick="f4()">Ccase</button>
+        <P id="p1"></P>
+    </body>
+</html>
